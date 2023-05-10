@@ -1,2 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
 
+.item {
+    cursor: pointer;
+    height: 100%;
+    &:hover {
+        background-color: antiquewhite;
+        border-radius: 10%;
+    }
+}
+
+.thumb {
+    max-width: 9.375rem;
+}
+
+.plus-btn {
+    height: 3.125rem;
+    width: 3.125rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
