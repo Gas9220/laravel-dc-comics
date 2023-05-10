@@ -3,6 +3,9 @@
 @section('page.title')
     <div class="container d-flex justify-content-between p-2">
         <h1>Available comics</h1>
+        <a href="{{ route('comics.create') }}" class="bg-primary rounded-circle plus-btn text-center text-decoration-none">
+            <span class="text-white">+</span>
+        </a>
     </div>
 @endsection
 
