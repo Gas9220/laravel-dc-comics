@@ -13,18 +13,14 @@ const deleteBtn = document.getElementById('delete-btn');
 const cancelBtn = document.getElementById('cancel-btn');
 const deleteBox = document.getElementById('delete-box');
 
-function dismiss() {
-    deleteBox.classList.remove('show')
+function toggleClass(element, classToToggle) {
+    element.classList.toggle(classToToggle)
 };
-
-function show() {
-    deleteBox.classList.add('show')
-};
-
-deleteBtn.addEventListener('click', () => {
-    show();
-});
 
 cancelBtn.addEventListener('click', () => {
-    dismiss();
+    toggleClass(deleteBox, 'show');
+});
+
+deleteBtn.addEventListener('click', () => {
+    toggleClass(deleteBox, 'show');
 });
