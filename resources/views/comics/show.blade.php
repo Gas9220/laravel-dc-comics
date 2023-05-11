@@ -2,7 +2,15 @@
 
 @section('page.title')
     <div class="container">
-        <h1>{{ $comic->title }}</h1>
+        <div class="d-flex justify-content-between">
+            <div>
+                <a href="{{ route('comics.index', $comic->id) }}" class="btn btn-primary btn-sm">Back</a>
+            </div>
+            <h1>{{ $comic->title }}</h1>
+            <div class="me-3">
+                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary btn-sm">Edit</a>
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -15,9 +23,6 @@
         <p>{{ $comic->artists }}</p>
         <div>
             <span>Available from {{ $comic->sale_date }} at {{ $comic->price . '€' }}</span>
-        </div>
-        <div>
-            <a href="{{ route('comics.index') }}" class="btn btn-primary btn-sm">Back</a>
         </div>
     </div>
 @endsection
