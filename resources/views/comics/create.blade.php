@@ -1,16 +1,17 @@
 @extends('layout.app')
 
 @section('page.title')
-    <div class="container">
-        Create new comic
+    <div class="container d-flex">
+        <div class="me-3">
+            <a href="{{ route('comics.index') }}" class="btn btn-primary btn-sm">Back</a>
+        </div>
+        <h1>Create new comic</h1>
     </div>
 @endsection
 
 @section('page.main')
     <div class="container">
-        <div>
-            <a href="{{ route('comics.index') }}" class="btn btn-primary btn-sm">Back</a>
-        </div>
+
 
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf

@@ -2,17 +2,23 @@
 
 @section('page.title')
     <div class="container">
-        <div class="d-flex">
+        <div class="d-flex justify-content-between">
             <div class="me-3">
                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary btn-sm">Back</a>
             </div>
-            <h1>Edit {{ $comic->title }}</h1>
+            <h1>{{ $comic->title }}</h1>
+
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Cancella" class="btn btn-danger btn-sm">
+            </form>
         </div>
     </div>
 @endsection
 
 @section('page.main')
-    <div class="container">
+    <div class="container p-2">
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -59,7 +65,7 @@
 
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
 @endsection
