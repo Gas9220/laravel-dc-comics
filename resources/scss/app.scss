@@ -22,3 +22,18 @@
     }
 }
 
+#delete-box {
+    position: absolute;
+    display: none;
+    background-color: lightblue;
+    border-radius: 1.25rem;
+    width: 18.75rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show {
+    display: block !important;
+}
+

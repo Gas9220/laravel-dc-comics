@@ -7,18 +7,26 @@
                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary btn-sm">Back</a>
             </div>
             <h1>{{ $comic->title }}</h1>
-
-            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <input type="submit" value="Cancella" class="btn btn-danger btn-sm">
-            </form>
+            <div>
+                <button id="delete-btn" class="btn btn-danger btn-sm">Delete</button>
+            </div>
         </div>
     </div>
 @endsection
 
 @section('page.main')
-    <div class="container p-2">
+    <div class="container p-2 position-relative">
+        <div id="delete-box" class="text-center">
+            <h5 class="p-3">Are you sure?</h5>
+            <div class="p-3 d-flex justify-content-center gap-3">
+                <button id="cancel-btn">Cancel</button>
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Confirm" class="btn btn-danger btn-sm">
+                </form>
+            </div>
+        </div>
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
